@@ -2204,7 +2204,7 @@ Overloads:
 #1: IterateGameDirectories()"};
 
             std::filesystem::path game_executable_directory = UE4SSProgram::get_program().get_game_executable_directory();
-            auto game_content_dir = game_executable_directory.parent_path().parent_path() / "Content";
+            auto game_content_dir = module_directory / "Content";
             if (!std::filesystem::exists(game_content_dir))
             {
                 Output::send<LogLevel::Warning>(STR("IterateGameDirectories: Could not locate the root directory because the directory structure is unknown "
@@ -2213,8 +2213,8 @@ Overloads:
                 return 1;
             }
 
-            auto game_name = game_executable_directory.parent_path().parent_path().stem();
-            auto game_root_directory = game_executable_directory.parent_path().parent_path().parent_path();
+            auto game_name = "Ace7Game";
+            auto game_root_directory = module_directory;
             auto directories_table = lua.prepare_new_table();
 
             std::function<void(const std::filesystem::path&, LuaMadeSimple::Lua::Table&)> iterate_directory =
