@@ -12,4 +12,5 @@ jsbLuaProfilerMod : 0
 
 
 ; Built-in keybinds, do not move up!
-Keybinds : 1
+; Keybinds disabled to avoid conflicts with Live Viewer
+Keybinds : 0

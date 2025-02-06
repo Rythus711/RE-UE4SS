@@ -323,11 +323,12 @@ local function LoadMods(World)
     end
 end
 
-RegisterKeyBind(Key.INS, function()
-    ExecuteInGameThread(function()
-        LoadMods(UEHelpers.GetWorld())
-    end)
-end)
+----Disabled to avoid issues of spawning multiple blueprint mods when pressing Insert
+--RegisterKeyBind(Key.INS, function()
+    --ExecuteInGameThread(function()
+        --LoadMods(UEHelpers.GetWorld())
+    --end)
+--end)
 
 RegisterBeginPlayPostHook(function(ContextParam)
     local Context = ContextParam:get()

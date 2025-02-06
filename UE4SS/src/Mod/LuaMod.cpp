@@ -2204,7 +2204,7 @@ Overloads:
 #1: IterateGameDirectories()"};
 
             std::filesystem::path game_executable_directory = UE4SSProgram::get_program().get_game_executable_directory();
-            auto game_content_dir = game_executable_directory / "Content";
+            auto game_content_dir = game_executable_directory / "Game" / "Content";
             if (!std::filesystem::exists(game_content_dir))
             {
                 Output::send<LogLevel::Warning>(STR("IterateGameDirectories: Could not locate the root directory because the directory structure is unknown "
